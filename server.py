@@ -6,18 +6,21 @@ app = Flask(__name__)
 
 @app.route('/play')
 def lvl1():
-    return  render_template("index.html", id = 3)
+    container = '<div class="container box m-1 flex"></div>'
+    return  render_template("index.html", id = 3, container = container, color = "blue")
 
 
 @app.route('/play/<int:id>')
 def lvl2(id):
-    return  render_template("index.html", id = id)
+    container = '<div class="container box m-1 flex"></div>'
+    return  render_template("index.html", id = id , container = container, color = "blue")
 
 
 
 @app.route('/play/<int:id>/<color>')
 def lvl3(id,color):
-    return  render_template("index.html", id = id,color = color)
+        container = '<div class="container box m-1 flex"></div>'
+        return  render_template("index.html", id = id,color = color , container = container)
 
 
 
